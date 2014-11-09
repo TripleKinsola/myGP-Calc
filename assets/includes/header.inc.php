@@ -21,8 +21,8 @@ ini_set('display_errors', false);
     <title>Welcome | CGPA-Calc</title>
     <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="./dist/css/sticky-footer.css" rel="stylesheet">
-    <script src="./assets/js/ie-emulation-modes-warning.js"></script>
-    <script src="./assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <script src="./dist/js/respond.min.js"></script>
   </head>
 
   <body>
@@ -32,13 +32,13 @@ ini_set('display_errors', false);
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span style="color:#fff;">
+            <span class="glyphicon glyphicon-user"></span>
+            MENU</span>
           </button>
-          <a class="navbar-brand" href="index.php">myCGPA-Calc</a>
+          <a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home" ></span> myCGPA-Calc</a>
         </div>
-        <div class="pull-right" style="color:#abcedf; font-size: 27px; padding-top:10px;">
+        <div class="collapse navbar-collapse pull-right" style="color:#abcedf; font-size: 27px; padding-top:10px;">
           <span class="dropdown-toggle" data-toggle="dropdown">
             <i class="glyphicon glyphicon-user"></i> Created by: <a href="http://geekerbyte.blogspot.com" target="_blank">Akinsola Ademola</a>
           </span>
