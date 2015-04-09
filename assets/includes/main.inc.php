@@ -11,7 +11,7 @@
     <div class="jumbotron">
       <div class="container">
         <div class="page-header">
-          <h1><span class="dav">Welcome, geek, to CGPA-Calc!</span></h1>
+          <h1><span class="dav">Welcome, <?= $_SESSION['name'] ?>, to CGPA-Calc!</span></h1>
           <p class="lead">We hope it will be amazing at the end of this calculation.</p>
         </div>
         <?php 
