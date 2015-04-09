@@ -30,6 +30,6 @@
           </div>
        </form>
 
-        <p class="alert alert-success">Please, type in the number of courses to be calculated, and make good sure that it is an integer value(eg; 1, 4, 7) with the minimum of 1.</p>
+        <p class="alert alert-warning">Please, type in the number of courses to be calculated, and make good sure that it is an integer value(eg; 1, 4, 7) with the minimum of 1.</p>
       </div> <!-- /container -->
     </div>
