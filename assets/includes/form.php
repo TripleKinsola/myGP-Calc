@@ -21,11 +21,11 @@ class Form{
 		if (isset($_POST['var'])) {
 			$this->param = trim($_POST['var']);
 			if (empty($this->param) || $this->param < 1) {
-				$this->error = urlencode("<h4>Ooops!</h4>That was tested and not accepted.<br />Please fill out appropriately.");
+				$this->error = urlencode("<h4>Oops! Looking like we can't continue...</h4> Please fill out appropriate number of courses.");
 				header('Location: index.php?msg=' . $this->error);
 			}elseif (is_numeric($this->param) && $this->param > 0) {
 				$con = "We will be Calculating <b>";
-				$conner = " Please make sure you select all units with appropriate grade for easy calculations.";
+				$conner = " Please make sure you select all units with appropriate grade for easy calculations.<br /><br />";
 				if ($this->param == 1) {
 					$this->comment = $con.$this->param.""." course.</b> {$conner}";
 				}else{
@@ -40,7 +40,7 @@ class Form{
 		}
 	}
 	private function s_select($a, $b, $c, $d, $e, $f, $aa){
-		$output = "<select id=\"selectError\" data-rel=\"chosen\"  name = \"$aa\" required= 'required'>";
+		$output = "<select id=\"selectError\" data-rel=\"chosen\" class='form-control' name = \"$aa\" required= 'required'>";
 		$output .= "<option value =\"\">--select--</option>";
 		$output .= "<option value =\"1\">$a</option>";
 		$output .= "<option value =\"2\">$b</option>";
@@ -62,13 +62,13 @@ class Form{
 		}
 	}
 	private function action($value=''){
-		$out = "<a href='index.php'><span class=\"btn btn-primary\">Cancel this calculation!</span></a>";
-		$out .= "<button type=\"reset\" class=\"btn btn-danger\">Reset all fills</button>";
-		$out .= "<button type=\"submit\" class=\"btn btn-success\" name='result'>Get Result</button></form>";
+		$out = "<a href='index.php'><span class=\"btn btn-danger\"><i class ='glyphicon glyphicon-remove'></i> Cancel this calculation!</span></a> ";
+		$out .= "<button type=\"reset\" class=\"btn btn-warning\"><i class ='glyphicon glyphicon-refresh'></i> Reset all fields</button>";
+		$out .= "<button type=\"submit\" class=\"btn btn-success pull-right\" name='result'><i class ='glyphicon glyphicon-ok'></i> Get Result !!!</button></form> ";
 		return $out;
 	}
 	private function f_select($a, $b, $c, $d, $e, $f, $aa){
-		$output = "<select id=\"selectError\" data-rel=\"chosen\" name = \"$aa\" required= 'required'>";
+		$output = "<select id=\"selectError\" data-rel=\"chosen\" class='form-control' name = \"$aa\" required= 'required'>";
 		$output .= "<option value =\"\">--select--</option>";
 		$output .= "<option value =\"5\">$a</option>";
 		$output .= "<option value =\"4\">$b</option>";
@@ -80,10 +80,10 @@ class Form{
 		return $output;
 	}
 	private function title(){
-		return "<input type='text' placeholder =\"Course title (optional)\" />";
+		return "<input type='text' class='form-control' placeholder =\"Course title (optional)\" />";
 	}
 	private function cons(){
-		return "<table class=\"table table-striped table-hover responsive\"><tr><th>Course(s)</th><th>Number of Unit(s)</th><th>Grade</th></tr>";
+		return "<table class=\"table table-striped table-hover table-bordered table-responsive\"><tr><th>Course(s)</th><th>Number of Unit(s)</th><th>Grade</th></tr>";
 	}
 	private function planner($var){
 		$u = " unit(s) for Course ";
@@ -91,8 +91,8 @@ class Form{
 		echo $this->cons();
 		for ($i=1; $i < $var+1; $i++) { 
 			echo "<tr><td>".$i.$this->title()."</td>";
-			echo "<td>".$this->s_select(1, 2, 3, 4, 5, 6, "unit{$i}").$u." ".$i."</td>";
-			echo "<td>".$this->f_select("A", "B", "C", "D", "E", "F", "grade{$i}").$g." ".$i."</td></tr>";
+			echo "<td>".$u." ".$i.$this->s_select(1, 2, 3, 4, 5, 6, "unit{$i}")."</td>";
+			echo "<td>".$g." ".$i.$this->f_select("A", "B", "C", "D", "E", "F", "grade{$i}")."</td></tr>";
 		}
 		echo "</table>";
 	}
@@ -131,7 +131,7 @@ class Calc{
 		$result = self::getVal();
 		if ($result >= 4.50) {
 			$out = "<div class=\"alert alert-success\"><h2><center>A First Class Student!</center></h2></div>";
-			$out .= "Keep making your fingers on the board, geek; you gat no prob with school.";
+			$out .= "Keep making your fingers on the board, ".$_SESSION['name']."; you gat no prob with school.";
 			echo $out;
 		}elseif ($result >= 3.50) {
 			$out = "<div class=\"alert alert-success\"><h2><center>A Second Class Upper Student!</center></h2></div>";
