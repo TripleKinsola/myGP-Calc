@@ -50,7 +50,7 @@ if (isset($_GET['name'])) {
             <span class="sr-only">Toggle navigation</span>
             <span style="color:#fff;">
             <span class="glyphicon glyphicon-user"></span>
-            Who Creator This?</span>
+            Who Created This?</span>
           </button>
           <a class="navbar-brand" href="index.php"><img src="assets/img/favicon.ico"> myCGPA-Calc</a>
         </div>
