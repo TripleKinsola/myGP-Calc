@@ -54,15 +54,9 @@ if (isset($_GET['name'])) {
           </button>
           <a class="navbar-brand" href="index.php"><img src="assets/img/favicon.ico"> myCGPA-Calc</a>
         </div>
-        <!-- <div class="collapse navbar-collapse pull-right" style="color:#abcedf; font-size: 27px; padding-top:10px;">
-          <span class="dropdown-toggle" data-toggle="dropdown" style="font-size: 24px;">
-            <i class="glyphicon glyphicon-user"></i> Created by: <a href="http://geekerbyte.blogspot.com" target="_blank">Akinsola Ademola </a>
-          </span>
-        </div> -->
-
             <div class="navbar-collapse collapse pull-right">
               <ul class="nav navbar-nav">
-                <li style="font-size:25px;"><a href="http://geekerbyte.blogspot.com" target="_blank"><span class="text-info"><i class="glyphicon glyphicon-user"></i>Created by: </span>Akinsola Ademola </a></li>
+                <li style="font-size:25px;"><a href="http://geekerbyte.blogspot.com" target="_blank"><span class="text-info"><i class="glyphicon glyphicon-user"></i><span class="hidden-sm hidden-xs">Created by: </span> </span>Akinsola Ademola </a></li>
               </ul>
             </div>
 

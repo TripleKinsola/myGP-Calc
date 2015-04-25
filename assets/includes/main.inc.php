@@ -24,7 +24,7 @@
         ?>
           <div class="input-group input-group-lg">
               <span class="input-group-addon">Enter</span>
-              <input name="var" type="text" class="form-control" placeholder="number of courses" required autofocus>
+              <input name="var" type="number" min="1" class="form-control" placeholder="number of courses" required autofocus>
               <span class="input-group-btn">
               <button class="btn btn-success" type="submit" name="fetch"><span class="glyphicon glyphicon-eye-open" ></span> Fetch!</button>
               </span>
