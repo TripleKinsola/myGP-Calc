@@ -2,4 +2,4 @@
 Browser based --student Grade Point calculator
 
 Hosted here: 
-http://gp-calculator.herokuapp.com/index.php
+http://gp-calculator.herokuapp.com
